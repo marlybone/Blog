@@ -5,10 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Blog</title>
 </head>
 <body>
     <div id="root"></div>
-    <h1><% articles.forEach</h1>
+    <div>
+        <div>
+            <nav>
+                <div>
+                    <h1>
+                        <a href="/"></a>
+                    </h1>
+                </div>
+            </nav>
+        </div>
+    </div> <!-- end nav -->
+    <main>
+    <% articles.forEach(article =>  { %>
+        <div>
+            <div>
+                <h4><%= article.title %></h4>
+                <div>
+                    <%= article.date %>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    </main>
 </body>
 </html>
