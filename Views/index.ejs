@@ -21,13 +21,16 @@
             </nav>
         </div>
     </div> <!-- end nav -->
-    <main>
+    <main class="py-16 px-16">
     <% articles.forEach(article =>  { %>
-        <div>
+        <div class="box border-2 h-56 w-72 p-4">
             <div>
                 <h4><%= article.title %></h4>
                 <div>
-                    <%= article.date %>
+                    <%= article.date.toLocaleDateString() %>
+                </div>
+                <div>
+                    <%= article.description %>
                 </div>
             </div>
         </div>
