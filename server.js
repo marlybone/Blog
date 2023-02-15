@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
         date: Date.now(),
         description: 'This is a test'
     }]
-    res.render('index', {article: articles})
+    res.render('index', {articles: articles})
 })
 
 app.listen(5000);
