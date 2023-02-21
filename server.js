@@ -21,7 +21,7 @@ app.use('/Views', express.static(path.join(__dirname, '/Views'), {
       }
     },
   }));
-  app.get('/app.js', (req, res) => {
+  app.get('/src/app.js', (req, res) => {
     res.setHeader('Content-Type', 'application/javascript');
     res.sendFile(__dirname + '/src/app.js');
   });
