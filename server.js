@@ -21,10 +21,15 @@ app.use('/Views', express.static(path.join(__dirname, '/Views'), {
       }
     },
   }));
+  app.get('/app.js', (req, res) => {
+    res.setHeader('Content-Type', 'application/javascript');
+    res.sendFile(__dirname + '/src/app.js');
+  });
   
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('Views'));
+app.use(express.static('src'));
 
 app.get('/', (req, res) => {
     const articles = [{
