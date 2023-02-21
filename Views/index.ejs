@@ -6,35 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="/Views/output.css" rel="stylesheet">
     <title>Blog</title>
 </head>
-<body>
+<body class="">
     <div id="root"></div>
-    <div>
-        <div>
+    <div class="md:grid grid-cols-6">
+        <div class="md:col-span-1">
             <nav>
                 <div>
                     <h1>
-                        <a href="/"></a>
+                        <a href="/" class="font-mono font-semibold text-4xl">Code Your Career</a>
                     </h1>
                 </div>
+                <ul>
+                    <li>
+                        <a>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </div>
-    </div> <!-- end nav -->
-    <main class="py-16 px-16">
+ <!-- end nav -->
+    <main class="bg-gray-200 py-16 px-16 md:col-span-5 sm\:px-2">
+        <header>
+            <h1 class="">
+                Articles
+            </h1>
+        </header>
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 md:gap-10">
     <% articles.forEach(article =>  { %>
-        <div class="box border-2 h-56 w-72 p-4">
+        <div class="card sm\:w-32">
+            <img class="w-full h-48 sm\:h-44 object-cover"/>
             <div>
-                <h4><%= article.title %></h4>
-                <div>
-                    <%= article.date.toLocaleDateString() %>
-                </div>
-                <div>
-                    <%= article.description %>
+                <h4 class="text-gray-600 text-2xl font-serif font-bold m-4"><%= article.title %></h4>
+                <div class="text-sm m-4">
+                    <%= article.date.toLocaleDateString() %> - <%= article.author %>
                 </div>
             </div>
         </div>
     <% }) %>
+    </div>
     </main>
+</div>
 </body>
 </html>
