@@ -5,7 +5,7 @@ const fs = require('fs')
 const path = require('path');
 const mimeTypes = require('mime-types');
 
-app.use('/Views', express.static(path.join(__dirname, 'Views'), {
+app.use('/Views', express.static(path.join(__dirname, '/Views'), {
     setHeaders: function (res, path) {
       const mimeType = mimeTypes.lookup(path);
       if (mimeType === 'text/css') {
@@ -13,7 +13,7 @@ app.use('/Views', express.static(path.join(__dirname, 'Views'), {
       }
     },
   }));
-  app.use(express.static('src', {
+  app.use(express.static('/src', {
     setHeaders: function (res, path) {
       const mimeType = mimeTypes.lookup(path);
       if (mimeType === 'text/css') {

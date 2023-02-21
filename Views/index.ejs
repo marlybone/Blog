@@ -5,29 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link href="/Views/output.css" rel="stylesheet">
+    <link href="./Views/output.css" rel="stylesheet">
     <title>Blog</title>
 </head>
 <body class="">
     <div id="root"></div>
     <div class="md:grid grid-cols-6">
         <div class="md:col-span-1">
-            <nav>
+            <nav class="text-right">
                 <div>
-                    <h1>
-                        <a href="/" class="font-mono font-semibold text-4xl">Code Your Career</a>
+                    <h1 class="font-mono font-semibold text-3xl border-b text-left ml-2">
+                        <a href="/">Code Your Career</a>
                     </h1>
+                    <div class="px-4 cursor-pointer md:hidden">
+                        <svg class="w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                          </svg>                          
+                    </div>
                 </div>
-                <ul>
-                    <li>
-                        <a>
-                            <span>About</span>
+                <ul class="text-base m-4 mt-10 ">
+                    <li class="px-6">
+                        <a href="">
+                            <span class="text-gray-500 hover:text-gray-800">1. Home</span>
+                        </a>
+                    </li> 
+                    <li class="px-6 mt-2">
+                        <a href="">
+                            <span class="text-gray-500 hover:text-gray-800">2. About</span>
                         </a>
                     </li>
-                    <li>
-                        <a>
-                            <span>Contact</span>
+                    <li class="px-6 mt-2">
+                        <a href="">
+                            <span class="text-gray-500 hover:text-gray-800">3. Contact</span>
                         </a>
                     </li>
                 </ul>
@@ -36,13 +45,13 @@
  <!-- end nav -->
     <main class="bg-gray-200 py-16 px-16 md:col-span-5 sm\:px-2">
         <header>
-            <h1 class="">
+            <h1 class=" mb-12 text-3xl font-bold">
                 Articles
             </h1>
         </header>
         <div class="grid lg:grid-cols-3 md:grid-cols-2 md:gap-10">
     <% articles.forEach(article =>  { %>
-        <div class="card sm\:w-32">
+        <div class="card sm\:w-32 hover\:shadow-lg">
             <img class="w-full h-48 sm\:h-44 object-cover"/>
             <div>
                 <h4 class="text-gray-600 text-2xl font-serif font-bold m-4"><%= article.title %></h4>
