@@ -4,9 +4,5 @@
 @tailwind utilities;
 
 .card {
-    @apply bg-white rounded-sm shadow-md mb-4 hover:shadow-lg;
-}
-
-.lift {
-    @apply transform translate-y-3;
+    @apply bg-white rounded-sm shadow-md mb-4 hover:shadow-xl transform hover:-translate-y-1 ease-in-out duration-300;
 }

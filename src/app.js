@@ -7,4 +7,4 @@ icon.addEventListener('click', () => {
     } else {
         menu.classList.add('hidden')
     }
-})
+});
