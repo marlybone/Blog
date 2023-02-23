@@ -8,3 +8,8 @@ icon.addEventListener('click', () => {
         menu.classList.add('hidden')
     }
 });
+
+icon.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth'});
+});

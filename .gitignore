@@ -1,3 +1,5 @@
 node_modules
 .env
 Content
+imgs
+.json

@@ -5,6 +5,8 @@ const fs = require('fs')
 const path = require('path');
 const mimeTypes = require('mime-types');
 
+var publicDir = require('path').join(__dirname,'/public');
+
 app.use('/Views', express.static(path.join(__dirname, '/Views'), {
     setHeaders: function (res, path) {
       const mimeType = mimeTypes.lookup(path);
@@ -28,27 +30,50 @@ app.use('/Views', express.static(path.join(__dirname, '/Views'), {
   
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static('Views'));
-app.use(express.static('src'));
+app.use(express.static(publicDir));
 
 app.get('/', (req, res) => {
     const articles = [{
         title: 'test',
         date: new Date(),
         author: 'Marlon Steffenson',
+        img: "/imgs/job.jpg",
     }, {
         title: 'test1',
         date: new Date(),
         author: 'Marlon Steffenson', 
+        img: "/imgs/job.jpg",
     },{
         title: 'test3',
         date: new Date(),
         author: 'Marlon Steffenson', 
+        img: "/imgs/job.jpg",
     },{
         title: 'test4',
         date: new Date(),
         author: 'Marlon Steffenson', 
-    }
+        img: '/imgs/job.jpg',
+    },{
+      title: 'test4',
+      date: new Date(),
+      author: 'Marlon Steffenson', 
+      img: '/imgs/job.jpg',
+  },{
+    title: 'test4',
+    date: new Date(),
+    author: 'Marlon Steffenson', 
+    img: '/imgs/job.jpg',
+},{
+  title: 'test4',
+  date: new Date(),
+  author: 'Marlon Steffenson', 
+  img: '/imgs/job.jpg',
+},{
+  title: 'test4',
+  date: new Date(),
+  author: 'Marlon Steffenson', 
+  img: '/imgs/job.jpg',
+},
 
 ]
     res.render('index', { articles: articles })
