@@ -15,7 +15,7 @@
             <nav class="text-right">
                 <div class="flex justify-between items-center">
                     <h1 class="font-semibold text-3xl border-b text-left ml-2">
-                        <a class="font-Special" href="/">Code Your Career</a>
+                        <a class="font-Special" href="/index">Code Your Career</a>
                     </h1>
                     <div class="px-4 cursor-pointer md:hidden" id="icon">
                         <svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -25,12 +25,12 @@
                 </div>
                 <ul class="m-4 mt-10 hidden md:block" id="menu">
                     <li class="px-6">
-                        <a href="">
+                        <a href="/index">
                             <span class="text-gray-500 hover:text-gray-800 text-sm font-Press">1. Home</span>
                         </a>
                     </li> 
                     <li class="px-6 mt-2">
-                        <a href="">
+                        <a href="/about">
                             <span class="text-gray-500 hover:text-gray-800 text-sm font-Press">2. About</span>
                         </a>
                     </li>
@@ -55,7 +55,7 @@
             <img class="w-full h-48 sm\:h-44 object-cover"/>
             <div>
                 <h4 class="text-gray-600 text-2xl font-serif font-bold m-4 font-Roboto"><%= article.title %></h4>
-                <div class="text-sm m-4 font-Roboto">
+                <div class="text-sm m-4 font-Inter">
                     <%= article.date.toLocaleDateString() %> - <%= article.author %>
                 </div>
             </div>

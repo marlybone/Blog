@@ -54,6 +54,10 @@ app.get('/', (req, res) => {
     res.render('index', { articles: articles })
 })
 
+app.get('/about', (req, res) => {
+  res.render('about')
+})
+
 app.post('/index', (req, res) => {
 
 })

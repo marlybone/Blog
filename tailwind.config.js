@@ -9,6 +9,7 @@ module.exports = {
       'Special': '"Special Elite"',
       'Press': '"Press Start 2P"',
       'Merri': 'Merriweather',
+      'Inter': 'Inter',
     },
     extend: {},
   },

@@ -6,6 +6,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 /*
 ! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
 */
@@ -638,6 +640,10 @@ video {
 
 .text-right{
   text-align: right;
+}
+
+.font-Merri{
+  font-family: Merriweather;
 }
 
 .font-Press{
