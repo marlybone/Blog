@@ -4,6 +4,7 @@ const markdown = require('markdown-it')
 const fs = require('fs')
 const path = require('path');
 const mimeTypes = require('mime-types');
+const marked = require('marked');
 
 var publicDir = require('path').join(__dirname,'/public');
 
@@ -33,49 +34,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(publicDir));
 
 app.get('/', (req, res) => {
-    const articles = [{
-        title: 'test',
-        date: new Date(),
-        author: 'Marlon Steffenson',
-        img: "/imgs/job.jpg",
-    }, {
-        title: 'test1',
-        date: new Date(),
-        author: 'Marlon Steffenson', 
-        img: "/imgs/job.jpg",
-    },{
-        title: 'test3',
-        date: new Date(),
-        author: 'Marlon Steffenson', 
-        img: "/imgs/job.jpg",
-    },{
-        title: 'test4',
-        date: new Date(),
-        author: 'Marlon Steffenson', 
-        img: '/imgs/job.jpg',
-    },{
-      title: 'test4',
-      date: new Date(),
-      author: 'Marlon Steffenson', 
-      img: '/imgs/job.jpg',
-  },{
-    title: 'test4',
-    date: new Date(),
-    author: 'Marlon Steffenson', 
-    img: '/imgs/job.jpg',
-},{
-  title: 'test4',
-  date: new Date(),
-  author: 'Marlon Steffenson', 
-  img: '/imgs/job.jpg',
-},{
-  title: 'test4',
-  date: new Date(),
-  author: 'Marlon Steffenson', 
-  img: '/imgs/job.jpg',
-},
-
-]
     res.render('index', { articles: articles })
 })
 
