@@ -523,6 +523,22 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed{
+  position: fixed;
+}
+
+.sticky{
+  position: sticky;
+}
+
+.right-0{
+  right: 0px;
+}
+
+.top-0{
+  top: 0px;
+}
+
 .m-4{
   margin: 1rem;
 }
@@ -560,12 +576,8 @@ video {
   display: none;
 }
 
-.h-44{
-  height: 11rem;
-}
-
-.h-48{
-  height: 12rem;
+.h-40{
+  height: 10rem;
 }
 
 .h-6{
@@ -604,9 +616,9 @@ video {
   border-bottom-width: 1px;
 }
 
-.bg-gray-200{
+.bg-slate-200{
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .object-cover{
@@ -640,6 +652,10 @@ video {
 
 .text-right{
   text-align: right;
+}
+
+.font-Inter{
+  font-family: Inter;
 }
 
 .font-Merri{
@@ -696,6 +712,11 @@ video {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
+.text-sky-400{
+  --tw-text-opacity: 1;
+  color: rgb(56 189 248 / var(--tw-text-opacity));
+}
+
 .card{
   margin-bottom: 1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -717,6 +738,39 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.navText{
+  font-family: "Press Start 2P";
+  font-weight: 300;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.navText:hover{
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+@media (min-width: 640px){
+  .navText{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 768px){
+  .navText{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .navText{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
 .hover\:text-gray-800:hover{
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
@@ -726,6 +780,11 @@ video {
   .sm\:px-2{
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  .sm\:text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
