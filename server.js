@@ -7,6 +7,10 @@ const mimeTypes = require('mime-types');
 const marked = require('marked');
 
 var publicDir = require('path').join(__dirname,'/public');
+const directoryPath = path.join(__dirname, '/public/Content');
+
+const fileNames = fs.readdirSync(directoryPath);
+
 
 app.use('/Views', express.static(path.join(__dirname, '/Views'), {
     setHeaders: function (res, path) {
