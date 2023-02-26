@@ -1,16 +1,17 @@
 const express = require('express');
 const app = express();
-const markdown = require('markdown-it')
-const fs = require('fs')
+const md = require('markdown-it')();
+const fs = require('fs');
 const path = require('path');
 const mimeTypes = require('mime-types');
 const marked = require('marked');
+const meta = require('markdown-it-meta');
+const frontmatter = require('front-matter');
+const matter = require('gray-matter');
+
 
 var publicDir = require('path').join(__dirname,'/public');
-const directoryPath = path.join(__dirname, '/public/Content');
-
-const fileNames = fs.readdirSync(directoryPath);
-
+md.use(meta);
 
 app.use('/Views', express.static(path.join(__dirname, '/Views'), {
     setHeaders: function (res, path) {
@@ -38,16 +39,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(publicDir));
 
 app.get('/', (req, res) => {
-    res.render('index', { articles: articles })
-})
+  const blogPosts = [];
 
-app.get('/about', (req, res) => {
-  res.render('about')
-})
+  // Read all directories within public/Content
+  const dirs = fs.readdirSync('./public/Content', { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
 
-app.post('/index', (req, res) => {
+  // Loop through each directory and extract metadata from index.md
+  dirs.forEach(dir => {
+    const filePath = `./public/Content/${dir}/index.md`;
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data } = matter(fileContents);
+    const post = { ...data, slug: dir };
+    blogPosts.push(post);
+  });
 
-})
+  // Render the homepage template and pass the data to it
+  res.render('index', { blogPosts });
+});
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');

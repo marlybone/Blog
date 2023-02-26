@@ -1,13 +1,14 @@
 ---
 date: 26-02-2023
-title: 'C.V tecchniques'
-template: post
+title: 'Stakeholder Management'
 thumbnail: '../../Content/3242Stakeholder/job.jpg'
-author: 'Marlon Steffenson'
 slug: stakeholder-management
+author: 'Marlon Steffenson'
 tags:
   - Personal
   - Career
 ---
 
-Hello
+#How to Build an Interviewable C.V 
+
+etc etc. 

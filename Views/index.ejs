@@ -50,16 +50,15 @@
             </h1>
         </header>
         <div class="grid lg:grid-cols-3 md:grid-cols-2 md:gap-10 mx-14">
-            <%= console.log(blogPosts) %>
-            
+            <% blogPosts.forEach(item => { %>
                 <div class="card">
-                  <img class="w-full h-40 sm:h-40 object-cover" src="<%= blogPosts.thumbnail %>"></img>
+                  <img class="w-full h-40 sm:h-40 object-cover" src="<%= item.thumbnail %>"></img>
                   <div>
-                    <h4 class="text-blue-700 text-2xl font-bold m-4 font-Roboto"><%= blogPosts.title %></h4>
-                    <div class="text-sm m-4 font-Inter"><%= blogPosts.date %> - <%= blogPosts.author %></div>
+                    <h4 class="text-blue-700 text-2xl font-bold m-4 font-Roboto"><%= item.title %></h4>
+                    <div class="text-sm m-4 font-Inter"><%= item.date %> - <%= item.author %></div>
                   </div>
                 </div>
- 
+              <% }); %>
         </div>
     </main>
 </div>
