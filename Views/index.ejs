@@ -50,18 +50,17 @@
             </h1>
         </header>
         <div class="grid lg:grid-cols-3 md:grid-cols-2 md:gap-10 mx-14">
-    <% articles.forEach(article =>  { %>
-        <div class="card">
-            <img class="w-full h-40 sm\:h-40 object-cover" src='<%= article.img %>'></img>
-            <div>
-                <h4 class="text-blue-700 text-2xl font-bold m-4 font-Roboto"><%= article.title %></h4>
-                <div class="text-sm m-4 font-Inter">
-                    <%= article.date.toLocaleDateString() %> - <%= article.author %>
+            <%= console.log(blogPosts) %>
+            
+                <div class="card">
+                  <img class="w-full h-40 sm:h-40 object-cover" src="<%= blogPosts.thumbnail %>"></img>
+                  <div>
+                    <h4 class="text-blue-700 text-2xl font-bold m-4 font-Roboto"><%= blogPosts.title %></h4>
+                    <div class="text-sm m-4 font-Inter"><%= blogPosts.date %> - <%= blogPosts.author %></div>
+                  </div>
                 </div>
-            </div>
+ 
         </div>
-    <% }) %>
-    </div>
     </main>
 </div>
 <script src="/src/app.js"></script>
