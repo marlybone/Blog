@@ -51,7 +51,7 @@
         </header>
         <div class="grid lg:grid-cols-3 md:grid-cols-2 md:gap-10 mx-14">
             <% blogPosts.forEach(item => { %>
-                <div class="card">
+                <div class="card" data-slug="<%= item.slug %>" id="card">
                   <img class="w-full h-40 sm:h-40 object-cover" src="<%= item.thumbnail %>"></img>
                   <div>
                     <h4 class="text-blue-700 text-2xl font-bold m-4 font-Roboto"><%= item.title %></h4>

@@ -4,14 +4,14 @@ const md = require('markdown-it')();
 const fs = require('fs');
 const path = require('path');
 const mimeTypes = require('mime-types');
-const marked = require('marked');
+const { marked } = require('marked');
 const meta = require('markdown-it-meta');
 const frontmatter = require('front-matter');
 const matter = require('gray-matter');
 
 
 var publicDir = require('path').join(__dirname,'/public');
-md.use(meta);
+
 
 app.use('/Views', express.static(path.join(__dirname, '/Views'), {
     setHeaders: function (res, path) {
@@ -41,12 +41,10 @@ app.use(express.static(publicDir));
 app.get('/', (req, res) => {
   const blogPosts = [];
 
-  // Read all directories within public/Content
   const dirs = fs.readdirSync('./public/Content', { withFileTypes: true })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => dirent.name);
 
-  // Loop through each directory and extract metadata from index.md
   dirs.forEach(dir => {
     const filePath = `./public/Content/${dir}/index.md`;
     const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -55,8 +53,17 @@ app.get('/', (req, res) => {
     blogPosts.push(post);
   });
 
-  // Render the homepage template and pass the data to it
   res.render('index', { blogPosts });
+});
+
+app.get('/blog/:slug', (req, res) => {
+  const renderer = new marked.Renderer();
+  const { slug } = req.params;
+  const filePath = `./public/Content/${slug}/index.md`;
+  const fileContents = fs.readFileSync(filePath, 'utf-8');
+  const { data, content } = matter(fileContents);
+  const html = marked(content, { renderer });
+  res.render('blog', { data, html });
 });
 
 app.listen(5000, () => {
