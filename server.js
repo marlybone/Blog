@@ -73,7 +73,6 @@ app.get('/blog/:slug', (req, res) => {
   const { data, content } = matter(fileContents);
   const dirty = marked.parse(content);
   const html = DOMPurify.sanitize(dirty);
-  console.log(dirty, html);
   const post = { slug, ...data };
   res.render('blog', { post, html });
 });
