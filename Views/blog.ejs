@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('navbar') %>
 </head>
 <body>
-    <div id="content"></div>
+    <%- include('navbar')%>
+<div class="py-16 px-16 md:col-span-4 sm:px-2 m-16" id="content"><%- html %></div>
 </body>
 <script src="/src/app.js"></script>
-<script>
-    const contentDiv = document.getElementById('content');
-    contentDiv.innerHTML = '<%= html %>';
-  </script>
 </html>
