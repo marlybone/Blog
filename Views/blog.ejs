@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-    <link href="./Views/output.css" rel="stylesheet">
-    <title>Blog Page</title>
+    <%- include('navbar') %>
 </head>
 <body>
-    
+    <div id="content"></div>
 </body>
+<script src="/src/app.js"></script>
+<script>
+    const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = '<%= html %>';
+  </script>
 </html>

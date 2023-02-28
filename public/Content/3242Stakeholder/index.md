@@ -2,7 +2,8 @@
 date: 26-02-2023
 title: 'Stakeholder Management'
 thumbnail: '../../Content/3242Stakeholder/job.jpg'
-slug: stakeholder-management
+template: post
+slug: '3242Stakeholder'
 author: 'Marlon Steffenson'
 tags:
   - Personal
@@ -11,4 +12,4 @@ tags:
 
 #How to Build an Interviewable C.V 
 
-etc etc. 
+*etc etc. 

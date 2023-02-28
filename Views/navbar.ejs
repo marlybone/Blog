@@ -1,3 +1,11 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/Views/output.css" rel="stylesheet">
+    <title>navbar includes</title>
+</head>
 <div class="md:grid grid-cols-6">
     <div class="md:col-span-1">
         <nav class="text-right sticky top-0">
@@ -14,17 +22,17 @@
             <ul class="m-4 mt-10 hidden md:block" id="menu">
                 <li class="px-6">
                     <a href="/">
-                        <span class="text-gray-500 hover:text-gray-800  text-sm font-Press">1. Home</span>
+                        <span class="navText">Home</span>
                     </a>
                 </li> 
-                <li class="px-6 mt-2">
+                <li class="px-6 mt-2 sm:text-xs">
                     <a href="/about">
-                        <span class="text-gray-500 hover:text-gray-800 text-sm font-Press">2. About</span>
+                        <span class="navText">About</span>
                     </a>
                 </li>
                 <li class="px-6 mt-2">
                     <a href="">
-                        <span class="text-gray-500 hover:text-gray-800 text-sm font-Press">3. Contact</span>
+                        <span class="navText">Contact</span>
                     </a>
                 </li>
             </ul>

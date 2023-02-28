@@ -8,6 +8,11 @@ const { marked } = require('marked');
 const meta = require('markdown-it-meta');
 const frontmatter = require('front-matter');
 const matter = require('gray-matter');
+const createDOMPurify = require('dompurify');
+const { JSDOM } = require('jsdom');
+
+const window = new JSDOM('').window;
+const DOMPurify = createDOMPurify(window);
 
 
 var publicDir = require('path').join(__dirname,'/public');
@@ -33,6 +38,11 @@ app.use('/Views', express.static(path.join(__dirname, '/Views'), {
     res.setHeader('Content-Type', 'application/javascript');
     res.sendFile(__dirname + '/src/app.js');
   });
+
+  app.get('blog/Views/output.css', (req, res) => {
+    res.type('text/css');
+    res.sendFile(path.join(__dirname, './Views/output.css'));
+  });
   
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
@@ -57,14 +67,20 @@ app.get('/', (req, res) => {
 });
 
 app.get('/blog/:slug', (req, res) => {
-  const renderer = new marked.Renderer();
   const { slug } = req.params;
   const filePath = `./public/Content/${slug}/index.md`;
   const fileContents = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(fileContents);
-  const html = marked(content, { renderer });
-  res.render('blog', { data, html });
+  const dirty = marked.parse(content);
+  const html = DOMPurify.sanitize(dirty);
+  console.log(dirty, html);
+  const post = { slug, ...data };
+  res.render('blog', { post, html });
 });
+
+app.get('/about', (req, res) => {
+  res.render('about')
+})
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');

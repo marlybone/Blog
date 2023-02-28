@@ -15,13 +15,5 @@ icon.addEventListener('click', function(e) {
     window.scrollTo({ top: 0, behavior: 'smooth'});
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
+
   
-    cards.forEach(card => {
-      const slug = card.dataset.slug;
-      card.addEventListener('click', () => {
-        window.location.href = `/blog/${slug}`;
-      });
-    });
-  });

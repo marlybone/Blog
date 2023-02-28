@@ -9,7 +9,7 @@
     <title>Blog</title>
 </head>
 <body class="">
-    <div id="root"></div>
+    <div id="root"></div> <!-- Navbar start-->
     <div class="md:grid grid-cols-6">
         <div class="md:col-span-1">
             <nav class="text-right sticky top-0">
@@ -51,6 +51,7 @@
         </header>
         <div class="grid lg:grid-cols-3 md:grid-cols-2 md:gap-10 mx-14">
             <% blogPosts.forEach(item => { %>
+                <a href="/blog/<%= item.slug %>">
                 <div class="card" data-slug="<%= item.slug %>" id="card">
                   <img class="w-full h-40 sm:h-40 object-cover" src="<%= item.thumbnail %>"></img>
                   <div>
@@ -58,6 +59,7 @@
                     <div class="text-sm m-4 font-Inter"><%= item.date %> - <%= item.author %></div>
                   </div>
                 </div>
+                </a>
               <% }); %>
         </div>
     </main>
