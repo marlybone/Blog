@@ -14,7 +14,3 @@
 .navText {
     @apply text-gray-500 hover:text-gray-800 lg:text-sm sm:text-xs md:text-xs font-Press font-light;
 }
-
-.fade-in {
-    @apply transition-opa duration-500 ease-in-out 
-}

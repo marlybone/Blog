@@ -13,9 +13,13 @@ module.exports = {
       'Inter': 'Inter',
     },
     extend: {
+      animation: {
+        'fadein': 'fade 1s ease-in-out forwards',
+      },
       keyframes: {
-        fadein: {
-          
+        fade: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'none', opacity: '1' }
         }
       }
   },
