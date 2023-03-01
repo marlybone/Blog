@@ -1,6 +1,6 @@
 ---
 date: 26-02-2023
-title: 'C.V tecchniques'
+title: 'Build an Awesome C.V'
 template: post
 thumbnail: '../../Content/3242Stakeholder/job.jpg'
 author: 'Marlon Steffenson'

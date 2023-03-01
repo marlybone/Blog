@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
-    <link href="./Views/output.css" rel="stylesheet">
+    <link href="/Views/output.css" rel="stylesheet">
     <title>Blog</title>
 </head>
-<body class="">
+<body class="fade-in">
     <div id="root"></div> <!-- Navbar start-->
     <div class="md:grid grid-cols-6">
         <div class="md:col-span-1">
@@ -55,8 +55,8 @@
                 <div class="card" data-slug="<%= item.slug %>" id="card">
                   <img class="w-full h-40 sm:h-40 object-cover" src="<%= item.thumbnail %>"></img>
                   <div>
-                    <h4 class="text-blue-700 text-2xl font-bold m-4 font-Roboto"><%= item.title %></h4>
-                    <div class="text-sm m-4 font-Inter"><%= item.date %> - <%= item.author %></div>
+                    <h4 class="text-blue-500 text-xl font-semibold m-4 font-Roboto"><%= item.title %></h4>
+                    <h4 class="text-sm px-4 font-Inter pb-4"><%= item.date %> - <%= item.author %></h4>
                   </div>
                 </div>
                 </a>

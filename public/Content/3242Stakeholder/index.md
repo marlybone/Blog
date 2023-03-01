@@ -1,6 +1,6 @@
 ---
 date: 26-02-2023
-title: 'Stakeholder Management'
+title: 'Manage "Those" Stakeholders'
 thumbnail: '../../Content/3242Stakeholder/job.jpg'
 template: post
 slug: '3242Stakeholder'
