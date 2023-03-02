@@ -17,7 +17,6 @@ const DOMPurify = createDOMPurify(window);
 
 var publicDir = require('path').join(__dirname,'/public');
 
-
 app.use('/Views', express.static(path.join(__dirname, '/Views'), {
     setHeaders: function (res, path) {
       const mimeType = mimeTypes.lookup(path);
@@ -34,6 +33,7 @@ app.use('/Views', express.static(path.join(__dirname, '/Views'), {
       }
     },
   }));
+
   app.get('/src/app.js', (req, res) => {
     res.setHeader('Content-Type', 'application/javascript');
     res.sendFile(__dirname + '/src/app.js');
@@ -80,6 +80,11 @@ app.get('/blog/:slug', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about')
 })
+
+app.use(function(req, res, next) {
+  res.status(404);
+  res.render('404');
+});
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
