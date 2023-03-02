@@ -1,6 +1,6 @@
 const menu = document.querySelector('#menu');
 const icon = document.querySelector('#icon');
-const cards = document.querySelector('#card')
+const cards = document.querySelectorAll('.card')
 
 icon.addEventListener('click', () => {
     if (menu.classList.contains('hidden')) {
@@ -15,5 +15,13 @@ icon.addEventListener('click', function(e) {
     window.scrollTo({ top: 0, behavior: 'smooth'});
 });
 
-
+cards.forEach(card => {
+    card.addEventListener('mouseover', () => {
+      card.style.transform = 'translateY(-5px) !important';
+    });
+  
+    card.addEventListener('mouseout', () => {
+      card.style.transform = 'translateY(0) !important';
+    });
+  });
   
