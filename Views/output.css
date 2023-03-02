@@ -613,7 +613,7 @@ video {
 }
 
 .animate-fadein{
-  animation: fade 1s ease-in-out forwards;
+  animation: fade 500ms ease-in forwards;
 }
 
 .cursor-pointer{
