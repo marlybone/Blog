@@ -10,6 +10,7 @@ const frontmatter = require('front-matter');
 const matter = require('gray-matter');
 const createDOMPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
+require('@fortawesome/fontawesome-free/css/all.min.css');
 
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
