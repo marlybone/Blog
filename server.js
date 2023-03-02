@@ -5,48 +5,20 @@ const fs = require('fs');
 const path = require('path');
 const mimeTypes = require('mime-types');
 const { marked } = require('marked');
-const meta = require('markdown-it-meta');
-const frontmatter = require('front-matter');
-const matter = require('gray-matter');
 const createDOMPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
+const matter = require('gray-matter');
 
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
 
 
-var publicDir = require('path').join(__dirname,'/public');
+const publicDir = path.join(__dirname, 'public');
 
-app.use('/Views', express.static(path.join(__dirname, '/Views'), {
-    setHeaders: function (res, path) {
-      const mimeType = mimeTypes.lookup(path);
-      if (mimeType === 'text/css') {
-        res.set('Content-Type', mimeType);
-      }
-    },
-  }));
-  app.use(express.static('/src', {
-    setHeaders: function (res, path) {
-      const mimeType = mimeTypes.lookup(path);
-      if (mimeType === 'text/css') {
-        res.set('Content-Type', mimeType);
-      }
-    },
-  }));
-
-  app.get('/src/app.js', (req, res) => {
-    res.setHeader('Content-Type', 'application/javascript');
-    res.sendFile(__dirname + '/src/app.js');
-  });
-
-  app.get('blog/Views/output.css', (req, res) => {
-    res.type('text/css');
-    res.sendFile(path.join(__dirname, './Views/output.css'));
-  });
-  
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: false }));
+app.use('/Views', express.static(path.join(__dirname, 'Views')));
 app.use(express.static(publicDir));
+app.use(express.urlencoded({ extended: false }));
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   const blogPosts = [];
