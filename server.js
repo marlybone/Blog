@@ -8,6 +8,7 @@ const { marked } = require('marked');
 const createDOMPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
 const matter = require('gray-matter');
+const helmet = require("helmet");
 
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
@@ -19,6 +20,7 @@ app.use('/Views', express.static(path.join(__dirname, 'Views')));
 app.use(express.static(publicDir));
 app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
+app.use(helmet());
 
 app.get('/', (req, res) => {
   const blogPosts = [];

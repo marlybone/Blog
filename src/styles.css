@@ -8,7 +8,7 @@
 @tailwind utilities;
 
 .card {
-    @apply bg-white rounded-sm shadow-md mb-4;
+    @apply bg-white rounded-sm shadow-md transform transition duration-500 hover:-translate-y-1 hover:shadow-lg mb-4;
 }
 
 .navText {
