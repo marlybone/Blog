@@ -12,16 +12,16 @@
     <div id="root"></div> <!-- Navbar start-->
     <div class="md:grid grid-cols-6 min-h-screen">
         <div class="md:col-span-1 md:grid md:grid-rows-2 md:row-span-1">
+            <div class="px-4 cursor-pointer md:hidden fixed z-50 right-0 top-0 m-2 mr-6" id="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="blue" class="w-8 h-8 right-0 z-50 absolute">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>                          
+            </div>
             <nav class="text-right sticky top-0">
                 <div class="flex justify-between items-center">
                     <h1 class="font-semibold text-3xl border-b text-left ml-2">
                         <a class="font-Special" href="/">Coded Career</a>
                     </h1>
-                    <div class="px-4 cursor-pointer md:hidden fixed right-0" id="icon">
-                        <svg class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                          </svg>                          
-                    </div>
                 </div>
                 <ul class="m-4 mt-10 hidden md:block" id="menu">
                     <li class="px-6">
@@ -69,7 +69,7 @@
         <div class="grid lg:grid-cols-3 md:grid-cols-2 animate-fadein">
             <% blogPosts.forEach(item => { %>
                 <a href="/blog/<%= item.slug %>">
-                <div class="card" data-slug="<%= item.slug %>" id="card">
+                <div class="card sm:py-4" data-slug="<%= item.slug %>" id="card">
                     <h4 class="text-blue-500 px-2 md:text-lg lg:text-xl font-semibold py-2 font-Roboto flex justify-center"><%= item.title %></h4>
                   <img class="rounded-md w-auto h-auto px-2 py-4 object-cover" src="<%= item.thumbnail %>" alt="blog img"></img>
                   <div>
@@ -99,6 +99,6 @@
         </div>
     </footer>
 </div>
-<script src="src/app.js"></script>
 </body>
+<script src="Views/app.js"></script>
 </html>

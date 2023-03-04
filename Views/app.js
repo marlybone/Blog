@@ -1,6 +1,6 @@
 const menu = document.querySelector('#menu');
 const icon = document.querySelector('#icon');
-const cards = document.querySelectorAll('.card')
+const cards = document.querySelector('.card');
 
 icon.addEventListener('click', () => {
     if (menu.classList.contains('hidden')) {
@@ -24,4 +24,3 @@ cards.forEach(card => {
       card.style.transform = 'translateY(0) !important';
     });
   });
-  
