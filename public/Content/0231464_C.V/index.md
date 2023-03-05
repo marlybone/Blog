@@ -21,4 +21,4 @@ tags:
 
 -not good
 
-<img src='../../Content/3242Stakeholder/job.jpg' alt="My Image" />
+<img src='../../Content/3242Stakeholder/job.jpg' alt="My Image" class="w-auto h-auto"/>
