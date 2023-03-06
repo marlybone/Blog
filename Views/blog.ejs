@@ -10,8 +10,17 @@
 <body>
     <%- include('navbar')%>
 <div class="bg-gray-300 py-16 px-16 md:col-span-4 sm:px-2 m-16 animate-fadein" id="content">
-    <h1><%= post.title %> </h1>
-    <h2><%= post.date %> <%= post.author %></h2>
+    <div>
+        <h1><%= post.title %> </h1>
+        <h2><%= post.date %> <%= post.author %></h2>
+        <div class="share-btn" data-url="https://codedcarer.com/Blog/<%- post.slug %>" data-title="<%- post.title %>" data-desc="...">
+            <a class="btn-vk" data-id="vk">VK</a>
+            <a class="btn-facebook" data-id="fb">Facebook</a>
+            <a class="btn-twitter" data-id="tw">Twitter</a>
+            <a class="btn-telegram" data-id="tg">Telegram</a>
+            
+        </div>
+    </div>
     <p><%- html %></p>
     </div>
     <footer>
@@ -31,4 +40,6 @@
     </footer>
 </body>
 <script src="/Views/app.js"></script>
+<script src="/Views/share.js"></script>
+<script src="//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js"></script>
 </html>
