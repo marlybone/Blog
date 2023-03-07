@@ -8,7 +8,7 @@
 @tailwind utilities;
 
 .card {
-    @apply bg-white rounded-sm shadow-md transform transition duration-500 hover:-translate-y-1 hover:shadow-lg mb-4;
+    @apply bg-white rounded-sm shadow-md transform transition duration-500 hover:-translate-y-1 hover:shadow-lg mb-4 sm:py-4;
 }
 
 .navText {
@@ -21,4 +21,8 @@
 
 .hide {
     @apply space-y-6 hidden md:block;
+}
+
+.button {
+    @apply cursor-pointer transition duration-500 ease-in-out bg-gray-100 hover:bg-blue-700 transform hover:-translate-y-1 hover:scale-110 text-black font-bold py-2 px-4 rounded shadow-md;
 }

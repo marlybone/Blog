@@ -24,10 +24,3 @@ cards.forEach(card => {
       card.style.transform = 'translateY(0) !important';
     });
   });
-
-  const social = [ 
-
-
-
-    
-  ]

@@ -9,19 +9,21 @@
 </head>
 <body>
     <%- include('navbar')%>
-<div class="bg-gray-300 py-16 px-16 md:col-span-4 sm:px-2 m-16 animate-fadein" id="content">
-    <div>
-        <h1><%= post.title %> </h1>
-        <h2><%= post.date %> <%= post.author %></h2>
-        <div class="share-btn" data-url="https://codedcarer.com/Blog/<%- post.slug %>" data-title="<%- post.title %>" data-desc="...">
-            <a class="btn-vk" data-id="vk">VK</a>
-            <a class="btn-facebook" data-id="fb">Facebook</a>
-            <a class="btn-twitter" data-id="tw">Twitter</a>
-            <a class="btn-telegram" data-id="tg">Telegram</a>
-            
+<div class="bg-gray-300 py-12 px-12 md:col-span-4 sm:px-2 animate-fadein" id="content">
+    <div class="px-8 justify-center items-center self-center justify-items-center flex flex-col">
+        <h1 class="text-4xl font-bold"><%= post.title %> </h1>
+        <h2 class="flex flex-row"><%= post.date %> <%= post.author %></h2>
+        <p>Share</p>
+        <div class="p-6 m-4 " data-url="https://codedcarer.com/Blog/<%- post.slug %>" data-title="<%- post.title %>" data-desc="...">
+            <a class="button" data-id="vk">VK</a>
+            <a class="button"  data-id="fb">Facebook</a>
+            <a class="button"  data-id="tw">Twitter</a>
+            <a class="button"  data-id="tg">Telegram</a>  
         </div>
     </div>
+    <div class="px-8 py-8">
     <p><%- html %></p>
+    </div>
     </div>
     <footer>
         <div class="flex my-4 mx-4 justify-center sm:block md:hidden">
