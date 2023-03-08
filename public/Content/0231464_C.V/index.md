@@ -8,6 +8,8 @@ slug: '0231464_C.V'
 tags:
   - Personal
   - Career
+description: 'How to build an awesome C.V. Tools, tips and advice to level up your hirability'
+keywords: 'Career, Resume, Employability, Promotion, Hustle'
 ---
 
 <h1 class="">Hello</h1>

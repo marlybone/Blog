@@ -12,7 +12,21 @@ const helmet = require("helmet");
 
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
-
+app.use(
+  helmet.frameguard({
+    action: "deny",
+  })
+);
+app.use(helmet({
+  hsts: {
+    maxAge: 31536000, 
+    includeSubDomains: true,
+    preload: true
+  }
+}));
+app.use(helmet({
+  noCache: true
+}));
 
 const publicDir = path.join(__dirname, 'public');
 
