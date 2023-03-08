@@ -12,6 +12,15 @@ const helmet = require("helmet");
 
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", "'unsafe-inline'"],
+    styleSrc: ["'self'", "'unsafe-inline'"],
+    fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+    imgSrc: ["'self'", 'https://*.googleusercontent.com', 'data:']
+  }
+}));
 app.use(
   helmet.frameguard({
     action: "deny",

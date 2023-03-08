@@ -1,15 +1,16 @@
 ---
 date: 26-02-2023
 title: 'Build an Awesome C.V'
+description: How to build an awesome C.V. Tools, tips and advice to level up your hirability
 template: post
 thumbnail: '../../Content/3242Stakeholder/job.jpg'
 author: 'Marlon Steffenson'
 slug: '0231464_C.V'
-tags:
-  - Personal
+keywords:
+  - Resume
   - Career
-description: 'How to build an awesome C.V. Tools, tips and advice to level up your hirability'
-keywords: 'Career, Resume, Employability, Promotion, Hustle'
+  - Employability
+  - Occupational Growth
 ---
 
 <h1 class="">Hello</h1>
@@ -23,4 +24,4 @@ keywords: 'Career, Resume, Employability, Promotion, Hustle'
 
 -not good
 
-<img src='../../Content/3242Stakeholder/job.jpg' alt="My Image" class="w-auto h-auto"/>
+<img src='../../Content/3242Stakeholder/job.jpg' alt="My Image" class="w-auto h-auto" width="500" height="300"/>
