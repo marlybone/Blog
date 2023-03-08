@@ -5,23 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/Views/output.css" rel="stylesheet">
-    <title>Blog Main</title>
+    <title>Blog Main of Coded Career with Career Content</title>
 </head>
 <body>
     <%- include('navbar')%>
 <div class="bg-gray-300 py-8 md:col-span-4 animate-fadein" id="content">
     <div class="md:flex md:flex-row sm:flex-col justify-center items-center text-center">
         <div class="md:flex md:flex-col mt-4 flex-shrink justify-center items-center">
-        <img class="md:w-72 md:h-56 mb-4 px-6" src="/Views/imgs/coded.jpeg" />
+        <img class="md:w-72 md:h-56 mb-4 px-6" src="/Views/imgs/coded.png" alt="Career Front Page Image"/>
         <h1 class="lg:text-4xl font-bold mb-4 md:text-3xl text-xl sm:text-center"><%= post.title %> </h1>
         <h2 class="sm:text-xs font-Roboto md:text-sm sm:text-center"><%= post.date %> / <%= post.author %></h2>
         </div>
         <div class="m-6 md:flex md:flex-col space-y-2 md:space-x-2 sm:text-sm md:text-base text-xs flex-wrap flex-shrink-0" data-url="https://codedcarer.com/Blog/<%- post.slug %>" data-title="<%- post.title %>" data-desc="...">
-            <h1 class="mb-4">Share</h1>
-            <a class="button" data-id="re">Reddit</a>
-            <a class="button"  data-id="fb">Facebook</a>
-            <a class="button"  data-id="tw">Twitter</a>
-            <a class="button"  data-id="tg">Telegram</a>  
+                <h1 class="mb-4">Share</h1> 
+            <ul class="flex md:flex-col sm:flex-row px-2 justify-center">    
+                <li class="button"><a class="" data-id="re">Reddit</a></li>
+                <li class="button"><a class="" data-id="fb">Facebook</a></li>
+                <li class="button"><a class="" data-id="tw">Twitter</a></li>
+                <li class="button"><a class="" data-id="tg">Telegram</a></li>
+            </ul>
         </div>
     </div>
     <div class="md:px-20 py-12">

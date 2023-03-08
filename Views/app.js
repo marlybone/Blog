@@ -1,6 +1,6 @@
 const menu = document.querySelector('#menu');
 const icon = document.querySelector('#icon');
-const cards = document.querySelector('.card');
+const cards = document.querySelectorAll('.card');
 
 icon.addEventListener('click', () => {
     if (menu.classList.contains('hidden')) {
