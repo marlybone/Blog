@@ -3,12 +3,13 @@ const app = express();
 const md = require('markdown-it')();
 const fs = require('fs');
 const path = require('path');
-const mimeTypes = require('mime-types');
+const mime = require('mime');
 const { marked } = require('marked');
 const createDOMPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
 const matter = require('gray-matter');
 const helmet = require("helmet");
+const purgecss = require('purgecss')
 
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
@@ -38,6 +39,11 @@ app.use(helmet({
 }));
 
 const publicDir = path.join(__dirname, 'public');
+
+app.get('/node_modules/share-buttons/dist/share-buttons.js', function(req, res) {
+  res.setHeader('Content-Type', mime.getType('js'));
+  res.sendFile(__dirname + '/node_modules/share-buttons/dist/share-buttons.js');
+});
 
 app.use('/Views', express.static(path.join(__dirname, 'Views')));
 app.use(express.static(publicDir));
