@@ -8,6 +8,8 @@ author: 'Marlon Steffenson'
 tags:
   - Personal
   - Career
+description: 'How to manage difficult stakeholders. The does the don'ts and relationship building'
+keywords: 'Career, Stakesholders, Relationships'
 ---
 
 #How to Build an Interviewable C.V 
